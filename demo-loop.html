@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boucle</title>
+</head>
+
+<body>
+    
+    <script>
+
+        let str =prompt('tape your symbol("=";"+";"*";"/";...; or "numbers" and "letters")')
+        let srt= " "
+        let n = prompt('tape your line number')
+        for (let i = 0; i <= n; i++) {
+            for (let t = 0; t < n-i; t++) {
+                srt +=" " 
+            }
+            for (let k = 0; k < i; k++) {
+               srt+=str
+                
+            }
+            for (let k = 0; k < i-1; k++) {
+               srt+=str
+                
+            }
+            srt+="\n"
+        }
+        console.log(srt);
+        </script>
+</body>
+
+</html>
