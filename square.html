@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>square</title>
+</head>
+
+<body>
+    <div><a href="demo-hide.html">Home</a></div><br>
+    <section>
+        <label for="figure-select">Choose your figure:</label>
+
+        <select name="figures" id="figure-select" onchange="location.href=this.value;">
+            <option value="">--Please choose a figure--</option>
+            <option value="triangle.html">triangle</option>
+            <option value="rectangle.html">rectangle</option>
+            <option value="square.html">square</option>
+            <option value="circle.html">circle</option>
+        </select>
+    </section>
+    <section>
+        <h1>SQUARE</h1>
+        <h2>Perimeter(P) & Area(A)</h2>
+        <div>
+            <label for="Lfirstside">Length of the first side</label><br>
+            <input type="text" id="Lfirstside">
+        </div>
+        <div>
+            <label for="Lsecondside">Length of the second side</label><br>
+            <input type="text" id="Lsecondside">
+        </div><br>
+        <div><button onclick="perimeterCalculator()">Submit</button></div>
+        <br>
+        <input type="text" readonly id="perimeter">
+        <input type="text" readonly id="area">
+    </section>
+    <script>
+        function perimeterCalculator() {
+
+            const side1 = parseFloat(document.getElementById("Lfirstside").value) || 0
+            const side2 = parseFloat(document.getElementById("Lsecondside").value) || 0
+            if (side1 === side2) {
+                const [perimeter, area] = [document.getElementById("perimeter"), document.getElementById("area")]
+                const perimetercalcul = 2 * (side1 + side2)
+                const areacalcul = side1 * side2
+                area.value = `A= ${areacalcul}`
+                perimeter.value = `P= ${perimetercalcul}`
+            } else {
+                alert("Your figure is not a square")
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circle</title>
+</head>
+
+<body>
+
+    <div><a href="demo-hide.html">Home</a></div><br>
+    <section>
+        <label for="figure-select">Choose your figure:</label>
+
+        <select name="figures" id="figure-select" onchange="location.href=this.value;">
+            <option value="">--Please choose a figure--</option>
+            <option value="triangle.html">triangle</option>
+            <option value="rectangle.html">rectangle</option>
+            <option value="square.html">square</option>
+            <option value="circle.html">circle</option>
+        </select>
+    </section>
+    <section>
+        <h1>CIRCLE</h1>
+        <h2>Perimeter(P) & Area(A)</h2>
+        <div>
+            <label for="Lfirstside">Length of the first side</label><br>
+            <input type="text" id="Lfirstside">
+        </div><br>
+        <div><button onclick="perimeterCalculator()">Submit</button></div>
+        <br>
+        <input type="text" readonly id="perimeter">
+        <input type="text" readonly id="area">
+    </section>
+    <script>
+        function perimeterCalculator() {
+
+            const side1 = parseFloat(document.getElementById("Lfirstside").value) || 0
+            const [perimeter, area] = [document.getElementById("perimeter"), document.getElementById("area")]
+            const perimetercalcul = 3.14 * side1
+            const areacalcul = 3.14 * side1 * side1
+            area.value = `A= ${areacalcul}`
+            perimeter.value = `P= ${perimetercalcul}`
+        }
+    </script>
+
+</body>
+
+</html>
